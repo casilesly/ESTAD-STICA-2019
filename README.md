@@ -1,1 +1,0 @@
-# ESTAD-STICA-2019
