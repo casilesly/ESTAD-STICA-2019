@@ -1,1 +1,116 @@
+**Ejer:** ¿Que clase de objeto es BIC? ¿Qué clase de objeto es geospiza? use la función *str* para obtener información sobre la estructura.
+str(geospiza)
+str(BIC)
+class(geospiza)
 
+
+help("geospiza")
+
+
+**Ejer:** ¿Qué tipo de variable es tarsusL y qué clase? 
+Abra el objeto *tortues* y mire ¿Qué tipo de variables tiene y qué clase son?, haga lo mismo con el objeto *mite.env* y revise ¿Qué tipo de variable es *shurb* y qué clase es? Recuerde siempre usar help para saber de donde vienen los datos.
+
+class(geospiza$geopiza.data[ ,2])
+class(tortues)
+tortues
+class(mite.env)
+mite.env
+class(mite.env[ ,4])
+
+
+set.seed(1)
+
+sex <- c('F', 'M')
+
+sex
+
+
+
+p1 <- sample(x = sex, size = 48,replace = T,prob = c(0.5,0.5))
+
+p1 
+
+
+
+M <- length(which(p1 == 'M'))
+M
+
+F <- length(which(p1 == 'F'))
+F
+
+
+F/M
+
+
+**Ejer:** usando el data.frame *tortues* calcule la proporción de hembras y machos de la muestra
+
+
+set.seed(1)
+
+sex <- c('F', 'M')
+
+sex
+
+
+
+p1 <- sample(x = sex, size = 48,replace = T,prob = c(0.5,0.5))
+
+p1 
+
+
+
+M <- length(which(p1 == 'M'))
+M
+
+F <- length(which(p1 == 'F'))
+F
+
+
+F/M
+
+
+**Ejer:** usando el data.frame *tortues* calcule la proporción entre el ancho y el largo del caparazón, genere una tabla con la información de *tortues* y la nueva variable derivada.
+
+
+medidas<-cbind(tortues[ ,1], tortues[ ,2])
+
+medidas
+
+Tabla_medidas <- as.data.frame(cbind(paste('spp',1:48,sep = '_'),medidas))
+
+Tabla_medidas
+
+colnames(Tabla_medidas) <- c('Individuos', 'Ancho','Largo')
+
+Tabla_medidas
+
+# Relación ancho/largo
+
+prp <- tortues[ ,1]/tortues[ ,2]
+
+prp 
+
+Tabla_medidas_prp <- cbind.data.frame(Tabla_medidas, prp)
+
+Tabla_medidas_prp 
+
+
+
+
+## Ejer:** ¿Cuántas especies de *Corvus* fueron muestreadas en la región Paleártica-Africana? Use el data.frame del género *Corvus*. ¿Qué porcentaje de *Corvus* muestreados habitan zonas abiertas
+
+freq<-table(corvus$phylog)
+
+freq
+
+prop.table(freq)
+
+pie(prop.table(freq))
+
+Freq <- table(corvus$habitat)
+prop.table(Freq)
+
+
+**Ejer:** ¿Cómo luce el gráfico de frecuencias para los tipos de hábitat del género *Corvus*?
+
+pie(Freq)
