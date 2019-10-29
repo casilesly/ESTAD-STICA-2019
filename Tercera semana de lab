@@ -114,3 +114,25 @@ prop.table(Freq)
 **Ejer:** ¿Cómo luce el gráfico de frecuencias para los tipos de hábitat del género *Corvus*?
 
 pie(Freq)
+
+**Ejer:** encuentre el máximo, así como lo hizo para el mínimo
+
+ss<- apply(atlas$birds,2,sum)
+
+ 
+min(ss)
+
+which.min(ss)
+
+
+ss[which.min(ss)]
+
+max(ss)
+
+which.max(ss)
+
+
+xsp[which.max(ss)]
+
+**Ejer:** Repita el ejercicio para las variables continuas de tamaño de pico y tamaño del ala en el género *Corvus*. Busque cómo cambiar colores, ejes y algunas propiedades que le permitan mejorar el diseño del histograma.
+
