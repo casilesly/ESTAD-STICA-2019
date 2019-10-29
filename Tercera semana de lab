@@ -135,4 +135,37 @@ which.max(ss)
 xsp[which.max(ss)]
 
 **Ejer:** Repita el ejercicio para las variables continuas de tamaño de pico y tamaño del ala en el género *Corvus*. Busque cómo cambiar colores, ejes y algunas propiedades que le permitan mejorar el diseño del histograma.
+corvus$wing
 
+
+table(corvus$wing)
+
+ 
+min(corvus$wing)
+
+
+max(corvus$wing)
+
+
+range(corvus$wing)
+
+bins <- seq(225,475, 10)
+
+
+datos<- cut(corvus$wing, bins)
+
+
+freq_long<-table(datos)
+
+
+transform(freq_long)
+
+
+transform(freq_long, Relativ= prop.table(Freq), Acum= cumsum(Freq))
+
+
+hist(corvus$wing)
+
+# Histograma definiendo las cajas 
+
+hist(corvus$wing, breaks = bins, main = 'Longitudes de alas')
