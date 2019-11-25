@@ -128,8 +128,8 @@ muestreo <- getdata( iris, estratos )
 
 pez <- 1:5000
 rbind(pez)
-pez <- matrix(1:5000, nrow=500)
-sample(1:5000, size = 100, replace = F)
+PECES <- matrix(1:5000, nrow=500)
+sample(PECES, size = 100, replace = F)
 dbinom(26, size = 5000, prob =0.50)
 plot(0:5000,dbinom(0:5000, size = 5000, prob =0.5))
-density(pez)
+density(PECES)
