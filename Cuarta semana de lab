@@ -1,1 +1,53 @@
+##**Ejer:** Si la columna iris$Petal.Length tuviera valores 'NA', ¿Cómo podría eliminarlos antes de hacer la estimación de la media?
+  
+data("iris")
+iris$Petal.Length
+na = is.na(iris)
+remove(na) 
+
+##**Ejer:** Genere una función propia que le permita encontrar la mediana, tal y como lo hizo con la media aritmética.
+
+##**Ejer:** Genere una función propia que le permita calcular la moda
+
+##**Ejer:** Genere los cuantiles en intervalos de 0.5
+setosa <- iris$Petal.Length[which(iris$Species=='setosa')]
+quantile(setosa,probs = c(seq(0, 1, 0.25)))
+quantile(setosa,probs = c(seq(0, 1, 0.75)))
+quantile(setosa,probs = c(seq(0, 1, 0.5)))
+quantile(setosa,probs = 1)
+quantile(setosa,probs = 0.25, na.rm = T)
+
+
+##**Ejer:** ¿Qué sucede si el número de columnas deseado no se especifica? Obtenga la mediana, la moda y los cuantiles para cada especie de iris y para cada variable morfométrica.
+
+class(iris)
+
+setosa <- iris$Petal.Length[which(iris$Species=='setosa')]
+density(setosa)
+setosa1 <- iris$Sepal.Length[which(iris$Species=='setosa')]
+density(setosa1)
+setosa2 <- iris$Petal.Width[which(iris$Species=='setosa')]
+density(setosa2)
+setosa3 <- iris$Sepal.Width[which(iris$Species=='setosa')]
+density(setosa3)
+
+versicolor <- iris$Sepal.Length[which(iris$Species=='versicolor')]
+density(versicolor)
+versicolor1 <- iris$Petal.Length[which(iris$Species=='versicolor')]
+density(versicolor1)
+versicolor2 <- iris$Petal.Width[which(iris$Species=='versicolor')]
+density(versicolor2)
+versicolor3 <- iris$Sepal.Width[which(iris$Species=='versicolor')]
+density(versicolor3)
+
+virginica <- iris$Petal.Width[which(iris$Species=='virginica')]
+density(virginica)
+virginica1 <- iris$Sepal.Width[which(iris$Species=='virginica')]
+density(virginica1)
+virginica2 <- iris$Sepal.Length[which(iris$Species=='virginica')]
+density(virginica2)
+virginica3 <- iris$Petal.Length[which(iris$Species=='virginica')]
+density(virginica3)
+
+##**Ejer:** grafique la distribución de frecuencias de cada población usando histograma y densidad en el mismo gráfico. Adiciones la media, la mediana y la moda.
 
