@@ -1,1 +1,108 @@
 
+taman.muestra <-10
+Nmuestras <- 100
+
+
+Matriz.Muestras.pob2.sinMean <- matrix(NA, nrow = Nmuestras, ncol = taman.muestra)
+
+
+for (i in 1:Nmuestras){
+  muestra <- rlnorm(taman.muestra,meanlog =  1,sdlog =  1)
+  Matriz.Muestras.pob2.sinMean [i,]=muestra
+}
+#EJERCICIO RNORM 2
+
+taman.muestra <-10
+Nmuestras <- 30
+
+
+Matriz.Muestras.pob2.sinMean <- matrix(NA, nrow = Nmuestras, ncol = taman.muestra)
+
+
+for (i in 1:Nmuestras){
+  muestra <- rnorm(taman.muestra,mean =  15,  1)
+  Matriz.Muestras.pob2.sinMean [i,]=muestra
+}
+
+Matriz.Muestras.pob2.sinMean
+
+
+
+
+meansX <- apply(Matriz.Muestras.pob2.sinMean, 1, mean)
+
+meansX
+
+Matriz.Muestras.pob2.conMean <- cbind(Matriz.Muestras.pob2.sinMean,meansX)
+
+par(mfrow=c(2,2))
+hist(Matriz.Muestras.pob2.sinMean[1,], main = 'muestra 1')
+hist(Matriz.Muestras.pob2.sinMean[2,], main = 'muestra 2')
+hist(Matriz.Muestras.pob2.sinMean[3,], main = 'muestra 3')
+
+hist(Matriz.Muestras.pob2.conMean[,taman.muestra+1], main = 'medias')
+
+
+
+#EJERCICIO lognormal.2
+
+Matriz.Muestras.pob2.sinMean
+
+
+
+
+meansX <- apply(Matriz.Muestras.pob2.sinMean, 1, mean)
+
+meansX
+
+Matriz.Muestras.pob2.conMean <- cbind(Matriz.Muestras.pob2.sinMean,meansX)
+
+par(mfrow=c(2,2))
+hist(Matriz.Muestras.pob2.sinMean[1,], main = 'muestra 1')
+hist(Matriz.Muestras.pob2.sinMean[2,], main = 'muestra 2')
+hist(Matriz.Muestras.pob2.sinMean[3,], main = 'muestra 3')
+
+hist(Matriz.Muestras.pob2.conMean[,taman.muestra+1], main = 'medias')
+
+
+#Ley de los grandes números
+
+
+simula<-abs(rnorm(n = 1000,mean = 10,sd = 10))
+head(simula)
+Xpob <- mean(simula)
+
+Xpob
+
+muestreo <- c(3,5,10,15,20,25,30,50,60,100,200,700,1000)
+
+
+means<-NULL
+for(i in 1:length(muestreo)){
+  muestra<-sample(simula,muestreo[1],replace = F)
+  means<-c(means,mean(muestra))
+}
+plot(cbind(muestreo,means),type = "l")
+abline(h = Xpob,col="red")
+
+
+
+
+simula<-abs(rnorm(n = 1000,mean = 10,sd = 1))
+head(simula)
+
+Xpob <- mean(simula)
+
+Xpob
+
+muestreo <- c(3,5,10,15,20,25,30,50,60,100,200,700,1000)
+
+
+means<-NULL
+for(i in 1:length(muestreo)){
+  muestra<-sample(simula,muestreo[1],replace = F)
+  means<-c(means,mean(muestra))
+}
+plot(cbind(muestreo,means),type = "l")
+abline(h = Xpob,col="red")
+
