@@ -1,1 +1,32 @@
+*Ejer:* Cambie el tamaño de muestra y evalúe el valor de error estándar. ¿Cuánto debería aumentar la muestra para que el error estándar disminuya a la mitad?
+
+pop <- c(ceiling(rnorm(3500, mean = 30,sd = 3)), ceiling(runif(500, 45,51)))
+
+m1 <- sample(x = pop,size = 100, replace = T)
+
+  m2 <- sample(x = pop,size = 100, replace = T)
+  
+  m3 <- sample(x = pop,size = 100, replace = T)
+  
+  sd(c(m1,m2,m3))/sqrt(length(c(m1,m2,m3)))
+  
+*Ejer:*  Aumente el valor de desviación estándar y evalúe cómo cambia el error estándar
+
+ pop <- ceiling(rnorm(5000, mean = 35,sd = 3))
+ 
+ m1 <- sample(x = pop,size = 10, replace = T)
+  m2 <- sample(x = pop,size = 10, replace = T)
+  m3 <- sample(x = pop,size = 10, replace = T)
+
+ sd(c(m1,m2,m3))/sqrt(length(c(m1,m2,m3)))
+
+*Ejer:*  Cambie aumente el tamaño de la muestra y evalúe cómo cambia el error estándar.
+
+ pop <- ceiling(rnorm(10000, mean = 35,sd = 1))
+ 
+ m1 <- sample(x = pop,size = 10, replace = T)
+  m2 <- sample(x = pop,size = 10, replace = T)
+  m3 <- sample(x = pop,size = 10, replace = T)
+
+ sd(c(m1,m2,m3))/sqrt(length(c(m1,m2,m3)))
 
